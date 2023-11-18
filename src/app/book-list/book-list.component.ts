@@ -1,11 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, importProvidersFrom } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Book } from './../Models/book.model';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-book-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatCardModule],
   templateUrl: './book-list.component.html',
   styleUrl: './book-list.component.css'
 })
