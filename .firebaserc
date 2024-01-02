@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fir-project-les": {
+      "hosting": {
+        "angular-webapi": [
+          "angular-webapi"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fir-project-les"
+  }
+}

@@ -1,3 +1,27 @@
+<mat-card >
+    <mat-card-content>
+    <form #form="ngForm" (ngSubmit)="signIn(form)">
+
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="text" title="email" name="email" ngModel/>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" title="password" name="password" ngModel/>
+            </mat-form-field>
+        </div>
+        <div>
+            <button mat-raised-button type="submit">Sign In</button>
+        </div>
+    </form>
+</mat-card-content>
+</mat-card>
+@if(SignedIn) {
 <app-book-list [books]="books"></app-book-list>
+}
 
 <router-outlet></router-outlet>

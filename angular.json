@@ -90,6 +90,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "angular-webapi:build:production",
+              "serveTarget": "angular-webapi:serve:production"
+            },
+            "development": {
+              "buildTarget": "angular-webapi:build:development",
+              "serveTarget": "angular-webapi:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

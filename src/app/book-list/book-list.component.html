@@ -1,6 +1,12 @@
 <p>book-list works!</p>
 @for(book of books;track book.Id) {
     <mat-card>
-        book.id: {{book.Id}}
+        <mat-card-title>{{book.Id}}</mat-card-title>
+        <mat-card-content>
+            <p>{{book.Name}}</p>
+            <p>{{book.Author}}</p>
+            <p>{{book.Category}}</p>
+            <p>{{book.Price}}</p>
+        </mat-card-content>
     </mat-card>
 }
