@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -20,21 +21,27 @@ import { FormsModule } from '@angular/forms';
 export class AppComponent {
   title = 'angular-webapi';
   books: Book[]= [];
-  SignedIn: boolean = true;
+  SignedIn: boolean = false;
   
   constructor(private booksService: BooksService) { }
 
-  public signIn(form: any) {
-    console.log(`email :${form.controls.email.value})`);
-    console.log(`password :${form.controls.password.value})`);
+  public async signIn(form: any) {
     console.log(form);
-  }
+    console.log(`email :${form.controls.email.value}`);
+    console.log(`password :${form.controls.password.value}`);
+    
+    await this.booksService.signIn(form.controls.email.value, form.controls.password.value);
 
-  ngOnInit() {
+    this.SignedIn = true; 
+    
     this.booksService.getBooks().subscribe((books) => {
       console.log(books);
       this.books = books;
     });
+  }
+
+  ngOnInit() {
+   
   }
 
 
