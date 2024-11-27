@@ -14,7 +14,7 @@ export class BooksService {
   getBooks(): Observable<Array<Book>> {
     return this.http
       .get<Book[]>(
-        'https://localhost:7019/api/books'
+        'http://localhost:5246/api/books'
       )
       .pipe(map(
         (books) => books || []));
